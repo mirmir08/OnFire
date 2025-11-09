@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "869209847515",
+    "project_id": "uusarios",
+    "storage_bucket": "uusarios.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869209847515:android:3a5cd526bb90c4e79e7efe",
+        "android_client_info": {
+          "package_name": "com.example.nose"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhc--y81hAv6mZnTxGu6qhzZVUekfENbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869209847515:android:89d1f76a43b283c79e7efe",
+        "android_client_info": {
+          "package_name": "com.example.onfire"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhc--y81hAv6mZnTxGu6qhzZVUekfENbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
