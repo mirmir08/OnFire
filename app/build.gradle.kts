@@ -68,4 +68,7 @@ dependencies {
 
     implementation("androidx.activity:activity-compose")
     implementation(libs.play.services.measurement.api)
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+
+
 }

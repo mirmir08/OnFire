@@ -1,5 +1,6 @@
 package com.example.onfire
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -9,9 +10,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 
-enum class ProviderType{
-    BASIC
-}
 class LogoutActivity : AppCompatActivity() {
 
     lateinit var txt: TextView
@@ -39,12 +37,28 @@ class LogoutActivity : AppCompatActivity() {
 
 
         setup(email ?:"", provider ?:"")
+
+
+        //GUARDAR DATOS
+
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+        prefs.putString("email", email)
+        prefs.putString("provider", provider)
+        prefs.apply()
+
+
+
     }
 
     private fun setup(email: String, provider: String){
         title = "Inicio"
         txt.text = email
+        txt2.text = provider
         btn.setOnClickListener {
+            val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
+            prefs.clear()
+            prefs.apply()
+
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
         }
