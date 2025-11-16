@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnFire">
+        <meta-data
+            android:name="com.google.android.gms.fonts.certs"
+            android:resource="@array/com_google_android_gms_fonts_certs" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

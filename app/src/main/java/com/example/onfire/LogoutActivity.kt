@@ -27,7 +27,6 @@ class LogoutActivity : AppCompatActivity() {
             insets
         }
         txt = findViewById(R.id.emailTextView)
-        txt2 = findViewById(R.id.providerTextView)
         btn = findViewById(R.id.cerrar)
         val bundle = intent.extras
         val email = bundle?.getString("email")

@@ -1,80 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
     tools:context=".AuthActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:layout_marginBottom="32dp"
+            android:src="@mipmap/arbollogo" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:textAlignment="textEnd"
-            android:hint="Teclea tu matricula"
-            android:text="Correo"/>
-
+            android:fontFamily="@font/itim"
+            android:text="Correo"
+            android:textColor="@color/teal_dark"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/correo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:hint="Yoongi@gmail.com"/>
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            android:layout_width="240dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rounded_edittext_background"
+            android:fontFamily="@font/itim"
+            android:hint="Yoongi@gmail.com"
+            android:inputType="textEmailAddress"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey_light" />
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:textAlignment="textEnd"
-            android:text="Contraseña"/>
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/itim"
+            android:text="Contraseña"
+            android:textColor="@color/teal_dark"
+            android:textSize="24sp" />
 
-
-        <EditText
-            android:id="@+id/contraseña"
-            android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:hint="12345"/>
+            android:layout_marginTop="8dp"
+            app:boxBackgroundMode="none"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/grey_light">
 
+            <EditText
+                android:id="@+id/contraseña"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/rounded_edittext_background"
+                android:fontFamily="@font/itim"
+                android:hint="12345"
+                android:inputType="textPassword"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey_light" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/boton1"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/transparent_button_border"
+                android:fontFamily="@font/itim"
+                android:text="Registrar"
+                android:textColor="@color/teal_dark" />
+
+            <Button
+                android:id="@+id/boton2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/login_button_background"
+                android:fontFamily="@font/itim"
+                android:text="Log In"
+                android:textColor="@color/sand_light" />
+        </LinearLayout>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/boton1"
-        android:layout_width="120dp"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:text="Registrar"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/itim"
+        android:text="\@OnFire! 2025"
+        android:textColor="@color/sand_very_light"
+        android:textSize="15sp" />
 
-    <Button
-        android:id="@+id/boton2"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:text="Log In"/>
-
-
-
-
-</LinearLayout>
+</RelativeLayout>
