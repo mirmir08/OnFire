@@ -70,5 +70,8 @@ dependencies {
     implementation(libs.play.services.measurement.api)
     implementation("com.google.android.gms:play-services-auth:21.2.0")
 
+    //Map
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+
 
 }

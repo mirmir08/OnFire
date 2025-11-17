@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnFire">
         <meta-data
-            android:name="com.google.android.gms.fonts.certs"
+            android:name="com.google.android.gms.fonts"
             android:resource="@array/com_google_android_gms_fonts_certs" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />

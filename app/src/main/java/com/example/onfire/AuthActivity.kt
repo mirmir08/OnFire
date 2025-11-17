@@ -80,7 +80,9 @@ class AuthActivity : AppCompatActivity() {
 
     // Navega a la siguiente pantalla (HomeActivity)
     private fun showHome(email: String) {
-        val homeIntent = Intent(this, LogoutActivity::class.java).apply {
+
+        //val homeIntent = Intent(this, LogoutActivity::class.java).apply {
+        val homeIntent = Intent(this, MainActivity::class.java).apply {
             putExtra("email", email)
         }
         startActivity(homeIntent)
