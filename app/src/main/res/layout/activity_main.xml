@@ -6,13 +6,153 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    
+
+    <!-- Map Fragment -->
     <fragment
         android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:tag="map"
-        xmlns:android="http://schemas.android.com/apk/res/android"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Top Left Logo -->
+    <FrameLayout
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="19dp"
+        android:background="@drawable/circle_pale_blue"
+        android:padding="1dp"
+        android:elevation="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/arbollogo" />
+    </FrameLayout>
+
+    <!-- Side Panel -->
+    <LinearLayout
+        android:id="@+id/sidePanel"
+        android:layout_width="41dp"
+        android:layout_height="193dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/side_panel_background"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_water"
+            app:tint="#afd67d"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_tree"
+            app:tint="#afd67d" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            app:tint="#afd67d" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_trash"
+            app:tint="#afd67d" />
+    </LinearLayout>
+
+    <!-- Bottom Bar Background -->
+    <View
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:background="#03695e"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Bottom Left Button -->
+    <FrameLayout
+        android:id="@+id/btnBottomLeft"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/circle_dark_green"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomBar">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_tree"
+            app:tint="#afd67d"
+            app:iconSize="50dp"/>
+    </FrameLayout>
+
+    <!-- Center Button (Ruta) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ruta"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/circle_light_green"
+        app:backgroundTint="@null"
+        app:cornerRadius="28dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomBar"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        app:icon="@drawable/ic_home"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:iconTint="#367058"
+        app:iconSize="50dp" />
+
+    <!-- Bottom Right Button -->
+    <FrameLayout
+        android:id="@+id/btnBottomRight"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/circle_dark_green"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomBar">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_exit"
+            app:tint="#6eaf5f"
+            app:iconSize="50dp"/>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

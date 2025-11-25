@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Orange Background Card -->
+        <View
+            android:id="@+id/card_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/card_orange_bg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Header: Logo -->
+        <View
+            android:id="@+id/logo_bg"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/circle_shape"
+            android:backgroundTint="#ffe5b2"
+            app:layout_constraintStart_toStartOf="@id/card_background"
+            app:layout_constraintTop_toTopOf="@id/card_background" />
+
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/fuegologo"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@id/logo_bg"
+            app:layout_constraintEnd_toEndOf="@id/logo_bg"
+            app:layout_constraintTop_toTopOf="@id/logo_bg"
+            app:layout_constraintBottom_toBottomOf="@id/logo_bg" />
+
+        <!-- Information Texts -->
+        <TextView
+            android:id="@+id/tv_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="16dp"
+            android:text="Humedad relativa: 120"
+            android:fontFamily="sans-serif"
+            android:textSize="24sp"
+            android:textColor="#510b03"
+            app:layout_constraintStart_toStartOf="@id/card_background"
+            app:layout_constraintTop_toBottomOf="@id/logo_bg" />
+
+        <TextView
+            android:id="@+id/tv_wind_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Velocidad del viento: 120 km/h"
+            android:fontFamily="sans-serif"
+            android:textSize="24sp"
+            android:textColor="#510b03"
+            app:layout_constraintStart_toStartOf="@id/tv_humidity"
+            app:layout_constraintTop_toBottomOf="@id/tv_humidity" />
+
+        <TextView
+            android:id="@+id/tv_wind_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Dirección del viento: Suroeste"
+            android:fontFamily="sans-serif"
+            android:textSize="24sp"
+            android:textColor="#510b03"
+            app:layout_constraintStart_toStartOf="@id/tv_humidity"
+            app:layout_constraintTop_toBottomOf="@id/tv_wind_speed" />
+
+        <TextView
+            android:id="@+id/tv_co2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Dióxido de carbono: 0 "
+            android:fontFamily="sans-serif"
+            android:textSize="24sp"
+            android:textColor="#510b03"
+            app:layout_constraintStart_toStartOf="@id/tv_humidity"
+            app:layout_constraintTop_toBottomOf="@id/tv_wind_direction" />
+
+        <TextView
+            android:id="@+id/tv_recommendation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:text="Se recomienda:\nSe recomienda el método de\nbrecha cortafuego por la\ncapacidad del fuego y por\nla poca humedad relativa.\nEl fuego crece a 45km x h"
+            android:fontFamily="sans-serif"
+            android:textSize="24sp"
+            android:textColor="#510b03"
+            app:layout_constraintStart_toStartOf="@id/tv_humidity"
+            app:layout_constraintEnd_toEndOf="@id/card_background"
+            app:layout_constraintTop_toBottomOf="@id/tv_co2" />
+
+        <TextView
+            android:id="@+id/tv_ejidos_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Ejidos en peligro"
+            android:fontFamily="sans-serif"
+            android:textSize="24sp"
+            android:textColor="#510b03"
+            app:layout_constraintStart_toStartOf="@id/tv_humidity"
+            app:layout_constraintTop_toBottomOf="@id/tv_recommendation" />
+
+        <!-- Safe Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_safe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#ffe5b2"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="@id/tv_humidity"
+            app:layout_constraintEnd_toEndOf="@id/card_background"
+            app:layout_constraintTop_toBottomOf="@id/tv_ejidos_title">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Actualmente no hay ejidos\nen peligro"
+                android:textColor="#250302"
+                android:textSize="19sp"
+                android:fontFamily="sans-serif" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Danger Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_danger"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#250302"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="@id/card_safe"
+            app:layout_constraintEnd_toEndOf="@id/card_safe"
+            app:layout_constraintTop_toBottomOf="@id/card_safe">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="Ejido 2 esta en peligro esta a 2km del incendio"
+                android:textColor="#ffe5b2"
+                android:textSize="19sp"
+                android:fontFamily="sans-serif" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Disclaimer -->
+        <TextView
+            android:id="@+id/tv_disclaimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Los cálculos de IA son estimaciones....."
+            android:textColor="#762b0c"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/card_background"
+            app:layout_constraintEnd_toEndOf="@id/card_background"
+            app:layout_constraintTop_toBottomOf="@id/card_danger" />
+            
+        <!-- Arrow Icon (Bottom of scroll) -->
+         <ImageView
+            android:layout_width="12dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="30dp"
+            android:rotation="-90"
+            android:src="@drawable/ic_exit"
+            app:tint="#762b0c"
+            app:layout_constraintBottom_toBottomOf="@id/card_background"
+            app:layout_constraintEnd_toEndOf="@id/card_background"
+            app:layout_constraintStart_toStartOf="@id/card_background"
+            app:layout_constraintTop_toBottomOf="@id/tv_disclaimer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

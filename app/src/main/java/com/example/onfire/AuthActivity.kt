@@ -25,6 +25,12 @@ class AuthActivity : AppCompatActivity() {
         // Inicializar Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance()
 
+        // Comprobar si el usuario ya ha iniciado sesión
+        if (firebaseAuth.currentUser != null) {
+            showHome(firebaseAuth.currentUser?.email ?: "")
+            return
+        }
+
         correoEditText = findViewById(R.id.correo)
         contraseñaEditText = findViewById(R.id.contraseña)
         registrarButton = findViewById(R.id.boton1)
@@ -77,6 +83,14 @@ class AuthActivity : AppCompatActivity() {
             }
         }
     }
+    override fun onStart() {
+        super.onStart()
+        // Comprobar si el usuario ya ha iniciado sesión
+        if (firebaseAuth.currentUser != null) {
+            showHome(firebaseAuth.currentUser?.email ?: "")
+        }
+    }
+
 
     // Navega a la siguiente pantalla (HomeActivity)
     private fun showHome(email: String) {

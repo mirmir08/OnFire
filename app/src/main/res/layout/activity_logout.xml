@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,64 +8,71 @@
     android:background="@drawable/gradient_background"
     tools:context=".LogoutActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="106dp"
-            android:layout_height="106dp"
-            android:layout_marginBottom="32dp"
-            android:src="@mipmap/arbollogo" />
-
-        <!-- Email Display -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/itim"
-            android:text="Correo"
-            android:textColor="@color/teal_dark"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/emailTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/itim"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            tools:text="email@example.com" />
-
-
-        <!-- Logout Button -->
-        <Button
-            android:id="@+id/cerrar"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/logout_button_background"
-            android:fontFamily="@font/itim"
-            android:text="Cerrar Sesión"
-            android:textColor="@color/sand_light"
-            android:textSize="18sp" />
-
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="209dp"
+        android:contentDescription="@string/app_name"
+        android:src="@mipmap/arbollogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/label_correo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="411dp"
+        android:fontFamily="sans-serif"
+        android:text="correo"
+        android:textColor="@color/teal_dark"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/itim"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="email@example.com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_correo" />
+
+    <Button
+        android:id="@+id/cerrar"
+        android:layout_width="237dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="515dp"
+        android:background="@drawable/logout_button_background"
+        android:fontFamily="@font/itim"
+        android:letterSpacing="0"
+        android:text="Cerrar Sección"
+        android:textAllCaps="false"
+        android:textColor="@color/sand_light"
+        android:textSize="24sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:layout_marginStart="278dp"
         android:fontFamily="@font/itim"
         android:text="\@OnFire! 2025"
         android:textColor="@color/sand_very_light"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

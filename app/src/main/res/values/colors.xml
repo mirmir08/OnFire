@@ -7,4 +7,8 @@
     <color name="sand_light">#ffe5b2</color>
     <color name="sand_very_light">#fef3c6</color>
     <color name="teal_deep">#367058</color>
+    <color name="route_color">#E48F4C</color>
+    <color name="brown_dark">#510b03</color>
+    <color name="brown_medium">#762b0c</color>
+    <color name="brown_black">#250302</color>
 </resources>
