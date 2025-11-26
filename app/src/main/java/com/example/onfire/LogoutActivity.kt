@@ -1,6 +1,7 @@
 package com.example.onfire
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -13,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 class LogoutActivity : AppCompatActivity() {
 
     lateinit var txt: TextView
-    lateinit var txt2: TextView
     lateinit var btn: Button
 
 
@@ -32,11 +32,7 @@ class LogoutActivity : AppCompatActivity() {
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
 
-
-
-
         setup(email ?:"", provider ?:"")
-
 
         //GUARDAR DATOS
 
@@ -45,21 +41,21 @@ class LogoutActivity : AppCompatActivity() {
         prefs.putString("provider", provider)
         prefs.apply()
 
-
-
     }
 
     private fun setup(email: String, provider: String){
         title = "Inicio"
         txt.text = email
-        txt2.text = provider
         btn.setOnClickListener {
             val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
             prefs.clear()
             prefs.apply()
 
             FirebaseAuth.getInstance().signOut()
-            onBackPressed()
+            
+            val intent = Intent(this, AuthActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
 
 

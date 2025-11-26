@@ -82,6 +82,9 @@ class AuthActivity : AppCompatActivity() {
                 Toast.makeText(this, "El correo y la contraseña no pueden estar vacíos.", Toast.LENGTH_SHORT).show()
             }
         }
+
+
+
     }
     override fun onStart() {
         super.onStart()
@@ -101,6 +104,6 @@ class AuthActivity : AppCompatActivity() {
         }
         startActivity(homeIntent)
         finish() // Finaliza AuthActivity para que el usuario no pueda volver con el botón de atrás
-        Toast.makeText(this, "¡Autenticación exitosa! Bienvenido $email", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, " Bienvenido $email", Toast.LENGTH_LONG).show()
     }
 }

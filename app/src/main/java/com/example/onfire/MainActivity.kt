@@ -2,14 +2,15 @@ package com.example.onfire
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.location.Location
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -33,7 +34,6 @@ import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     //Boton de ruta
 
     private lateinit var buttoncalcular: Button
+
+    //Bonon cerrar sesion
+    private lateinit var logoutButton: FrameLayout
+
 
     //Variables para el mapa de los puntos de donde ir hasta donde ir
 
@@ -109,6 +113,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         //Location
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
+        //Boton
+        logoutButton = findViewById(R.id.logout)
+
+
 
         //Botones
         //---calcular ruta
@@ -141,6 +149,12 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
             }
         }
+
+        logoutButton.setOnClickListener {
+            showHome(email, provider)
+        }
+
+
     }
 
 
@@ -221,5 +235,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             .baseUrl("https://api.openrouteservice.org/v2/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+
+    private fun showHome(email: String?, provider: String?) {
+        val homeIntent = Intent(this, LogoutActivity::class.java).apply {
+            putExtra("email", email)
+            putExtra("provider", provider)
+        }
+        startActivity(homeIntent)
     }
 }

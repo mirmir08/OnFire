@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnFire">
         <activity
+            android:name=".arbol"
+            android:exported="false" />
+        <activity
             android:name=".info"
             android:exported="false" />
         <activity
